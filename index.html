@@ -10,26 +10,21 @@
   <body>
     <h1>What The Crop Is That?</h1>
     <div class="imageCategories">
-      <form class="imgCategory" action="index.html" method="post">
+      <form id="start-game" action="index.html" method="post">
         <label>Choose a Category:</label>
         <select class="category" name="categories">
           <option value="Animal">Animal</option>
           <option value="People">People</option>
           <option value="Places">Places</option>
         </select>
+        <input type="submit" value="Start Game">
       </form><br>
     </div>
     <div id="imagefromAPI">
     </div><br>
 
     <div class="guessForm">
-      <form class="" action="index.html" method="post">
-        <label>Username:</label>
-        <input type="text" name="username" value=""><br>
-        <label>Guess:</label>
-        <input type="text" name="guess" value=""><br>
-        <input type="submit" value="guess!">
-      </form>
+      
     </div>
 
     <div id="wrong_guesses"></div>
@@ -38,5 +33,9 @@
     <script src="./app/models/image.js" charset="utf-8"></script>
     <script src="./app/models/guess.js" charset="utf-8"></script>
     <script src="./app/models/user.js" charset="utf-8"></script>
+    <script src="./app/controllers/ApplicationController.js" charset="utf-8"></script>
+    <script src="./app/controllers/GameController.js" charset="utf-8"></script>
+    <script src="./app/controllers/GuessController.js" charset="utf-8"></script>
+    <script src="./app/app.js" charset="utf-8"></script>
   </body>
 </html>

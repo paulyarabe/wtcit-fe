@@ -13,12 +13,14 @@ function createImage(){
     static get all(){
       return all
     }
+
+    static find(id){
+      return this.all.filter(function(image){
+        return image.id === id
+      })[0]
+    }
+
   }
 }
 
 let Image = createImage()
-let rdj = new Image('https://s-media-cache-ak0.pinimg.com/originals/da/dc/d4/dadcd453713f86372e4297352939976b.jpg', 'Robert Downey Jr.', 2)
-
-$(document).ready(function(){
-  $('#imagefromAPI').append(`<img src="${rdj.url}" alt="placeholder" height="400px">`)
-})
