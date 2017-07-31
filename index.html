@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>What The Crop Is That?</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>What The Crop Is That?</h1>
+    <div class="imageCategories">
+      <form class="imgCategory" action="index.html" method="post">
+        <label>Choose a Category:</label>
+        <select class="category" name="categories">
+          <option value="Animal">Animal</option>
+          <option value="People">People</option>
+          <option value="Places">Places</option>
+        </select>
+      </form><br>
+    </div>
+    <div id="imagefromAPI">
+    </div><br>
+
+    <div class="guessForm">
+      <form class="" action="index.html" method="post">
+        <label>Username:</label>
+        <input type="text" name="username" value=""><br>
+        <label>Guess:</label>
+        <input type="text" name="guess" value=""><br>
+        <input type="submit" value="guess!">
+      </form>
+    </div>
+
+    <div id="wrong_guesses"></div>
+
+    <script src="./app/models/category.js" charset="utf-8"></script>
+    <script src="./app/models/image.js" charset="utf-8"></script>
+    <script src="./app/models/guess.js" charset="utf-8"></script>
+    <script src="./app/models/user.js" charset="utf-8"></script>
+  </body>
+</html>
