@@ -13,7 +13,7 @@ class GuessController extends ApplicationController {
         this.render(html, "#alert-banner")
       }
       else {
-        guessController.render(this.createGuessHTML(), "#wrong-guess-list")
+        this.render(this.createGuessHTML(), "#wrong-guess-list")
       }
     }
 
@@ -24,7 +24,7 @@ class GuessController extends ApplicationController {
         let user = User.find_or_create_by_name(event.currentTarget[0].value)
         let guess = new Guess(image, user, event.currentTarget[1].value.toLowerCase())
         event.currentTarget[1].value = ""
-        guessController.checkGuess(image, guess, user)
+        guessController.checkGuess(image, guess, user) //TODO Post request!
       })
     }
 

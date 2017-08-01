@@ -8,7 +8,7 @@ class GameController extends ApplicationController {
       <input type="text" data-imageid="${image.id}" name="guess" value="" required><br>
       <input type="submit" value="guess!">
     </form>`
-    gameController.render(html, '.guessForm')
+    this.render(html, '.guessForm')
     $("#wrong-guess-section").css("display", "block")
   }
 

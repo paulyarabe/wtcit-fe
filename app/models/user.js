@@ -1,4 +1,3 @@
-
 function createUser(){
 
   let userId = 0
@@ -28,8 +27,12 @@ function createUser(){
       return match? match : new User(name)
     }
 
-  }
+    destroy(){
+      let index = User.all.indexOf(this)
+      return User.all.splice(index,1)[0]
+    }
 
+  }
 }
 
 let User = createUser()
