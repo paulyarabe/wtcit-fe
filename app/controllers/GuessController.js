@@ -5,7 +5,7 @@ class GuessController extends ApplicationController {
     }
 
     checkGuess(image, guess, user){
-      if (image.answers.includes(guess.text)){
+      if (image.answer === guess.text){
         imageController.stopCrop()
         let html = `<h3>${user.name} wins!!</h3><p>The answer was: ${guess.text}</p>`
         $("#alert-banner").css("background", "green")
