@@ -1,11 +1,10 @@
 function createCategory(){
 
-  let categoryId = 0
   let all = []
 
   return class Category {
     constructor(name){
-      this.id = ++categoryId
+      this.id = undefined
       this.name = name
       all.push(this)
     }

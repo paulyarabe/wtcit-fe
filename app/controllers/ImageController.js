@@ -1,8 +1,8 @@
 class ImageController extends ApplicationController {
 
-  createImageHTML(img){
-    return `<img id = "game-image" src="${img.url}" alt="placeholder" height="400px" style="position: absolute; display:none">`
-  }
+  // createImageHTML(img){
+  //   return `<img id = "game-image" src="${img.url}" alt="placeholder" height="400px" style="position: absolute; display:none">`
+  // }
 
   get imageSections(){
     let h = parseInt($("#game-image").css("height"))

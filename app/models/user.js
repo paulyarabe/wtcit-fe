@@ -1,11 +1,10 @@
 function createUser(){
 
-  let userId = 0
   let all = []
 
   return class User {
     constructor(name){
-      this.id = ++userId
+      this.id = undefined
       this.name = name
       all.push(this)
     }

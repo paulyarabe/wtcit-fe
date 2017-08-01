@@ -1,13 +1,12 @@
 function createImage(){
 
-  let imageId = 0
   let all = []
 
   return class Image {
-    constructor(url, answer_arr, category){
-      this.id = ++imageId
+    constructor(url, answer, category){
+      this.id = undefined
       this.url = url
-      this.answers = answer_arr
+      this.answer = answer
       this.categoryId = category.id
       all.push(this)
     }

@@ -19,9 +19,11 @@ class GameController extends ApplicationController {
     let formattedAnswers = imageAnswers.map( answer => {
 	     return answer.trim()
     })
-    let newImage = new Image(imageUrl, formattedAnswers, categoryId)
-    gameController.render(`<img src="${newImage.url}" alt="placeholder" height="400px"><p>${newImage.answer}</p>`, '#imagefromAPI')
-    gameController.createGuessForm(newImage)
+    let image = new Image(imageUrl, formattedAnswers, categoryId)
+    // style="position: absolute; display:none" TODO: add this back in??
+    gameController.render(`<img src="${image.url}" id="game-image" alt="placeholder" height="400px"><p>${image.answers}</p>`, '#imagefromAPI')
+    gameController.createGuessForm(image)
+    imageController.startCrop(2)
   }
 
   getImage(category){
@@ -40,9 +42,8 @@ class GameController extends ApplicationController {
       event.preventDefault()
       let category = new Category(event.currentTarget[0].value)
       $('#start-game').empty()
-      $("#imagefromAPI").css("height", "400px")
+      $("#imagefromAPI").css("height", "450px")
       gameController.getImage(category)
-      imageController.startCrop(2)
     })
   }
 

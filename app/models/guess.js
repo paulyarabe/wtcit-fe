@@ -1,12 +1,11 @@
 function createGuess(){
 
-  let guessId = 0
   let all = []
 
   return class Guess {
-    constructor(image, user, text, correct){
-      this.id = ++guessId
-      this.imageId = image.id
+    constructor(game, user, text, correct){
+      this.id = undefined
+      this.gameId = game.id
       this.userId = user.id
       this.text = text
       this.correct = correct
