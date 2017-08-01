@@ -11,13 +11,35 @@ class GameController extends ApplicationController {
     gameController.render(html, '.guessForm')
   }
 
+  createAndRenderImage(images, categoryId){
+    let randomImage = Math.floor((Math.random() * 99) + 1)
+    let imageUrl = images.hits[randomImage].webformatURL
+    let imageAnswers = images.hits[randomImage].tags.split(",")
+    let formattedAnswers = imageAnswers.map( answer => {
+	     return answer.trim()
+    })
+    let newImage = new Image(imageUrl, formattedAnswers, categoryId)
+    gameController.render(`<img src="${newImage.url}" alt="placeholder" height="400px"><p>${newImage.answer}</p>`, '#imagefromAPI')
+    gameController.createGuessForm(newImage)
+  }
+
+  getImage(category){
+    let randomPage = Math.floor((Math.random() * 3) + 1)
+    $.ajax({
+         url: `https://pixabay.com/api/?key=6057872-ace21032695f6ad08f9b7a136&per_page=200&category=${category.name}&page=${randomPage}`,
+         method: 'GET',
+         success: function(data) {
+           gameController.createAndRenderImage(data, category.id)
+         }
+    })
+  }
+
+
   startGame(){
     $('#start-game').on('submit', function(event){
       event.preventDefault()
       let category = new Category(event.currentTarget[0].value)
-      let img = new Image('https://s-media-cache-ak0.pinimg.com/originals/da/dc/d4/dadcd453713f86372e4297352939976b.jpg', 'Robert Downey Jr.', category.id)
-      gameController.render(`<img src="${img.url}" alt="placeholder" height="400px">`, '#imagefromAPI')
-      gameController.createGuessForm(img)
+      gameController.getImage(category)
     })
   }
 

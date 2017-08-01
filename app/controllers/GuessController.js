@@ -8,12 +8,12 @@ class GuessController extends ApplicationController {
         let newGuess = new Guess(imageId, newUser.id, event.currentTarget[1].value)
         event.currentTarget[1].value = ""
         let currentImage = Image.find(imageId)
-        if (currentImage.answer.lowerCase() === newGuess.text.lowerCase()){
-          console.log('mayonnaise')
-        }
+        if (currentImage.answer.includes(newGuess.text.toLowerCase())) {
+	         console.log("correct")
+         }
         else {
-          console.log("You're an animal")
-        }
+	         console.log("false")
+         }
       })
     }
 
