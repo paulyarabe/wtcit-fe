@@ -3,10 +3,10 @@ function createGuess(){
   let guessId = 0
   let all = []
   return class Guess {
-    constructor(imageId, userId, text, correct){
+    constructor(image, user, text, correct){
       this.id = ++guessId
-      this.imageId = imageId
-      this.userId = userId
+      this.imageId = image.id
+      this.userId = user.id
       this.text = text
       this.correct = correct
       all.push(this)

@@ -33,13 +33,13 @@ class ImageController extends ApplicationController {
     $("#game-image").css("display", "block")
     let sections = this.imageSections
     $("#game-image").css("clip", `${sections[Math.floor(Math.random()*sections.length)]}`)
-    setInterval(function(){
+    window.cropInterval = setInterval(function(){
       $("#game-image").css("clip", `${sections[Math.floor(Math.random()*sections.length)]}`)
-    },
-    interval*1000)
+    }, interval*1000)
   }
 
   stopCrop(){
+    clearInterval(window.cropInterval)
     $("#game-image").css("clip", "auto")
   }
 

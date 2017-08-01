@@ -3,11 +3,11 @@ function createImage(){
   let imageId = 0
   let all = []
   return class Image {
-    constructor(url, answer, categoryId){
+    constructor(url, answer_arr, category){
       this.id = ++imageId
       this.url = url
-      this.answer = answer
-      this.categoryId = categoryId
+      this.answers = answer_arr
+      this.categoryId = category.id
       all.push(this)
     }
     static get all(){

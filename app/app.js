@@ -41,3 +41,7 @@ function unCropImage(){
   $("#game-image").css("position", "absolute")
   $("#game-image").css("clip", "auto")
 }
+
+
+// Seed Data
+u = new User("david")
