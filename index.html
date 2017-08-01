@@ -9,6 +9,8 @@
   </head>
   <body>
     <h1>What The Crop Is That?</h1>
+    <div id="alert-banner">
+    </div>
     <div class="imageCategories">
       <form id="start-game" action="index.html" method="post">
         <label>Choose a Category:</label>
@@ -20,10 +22,13 @@
     </div><br>
 
     <div class="guessForm">
-
     </div>
 
-    <div id="wrong_guesses"></div>
+    <div id="wrong-guess-section" style="display:none;">
+      <h3>Guesses Made:</h3>
+    <div id="wrong-guess-list" style="height:400px; width:300px; border:1px solid; overflow:auto;">
+    </div>
+    </div>
 
     <script src="./app/models/category.js" charset="utf-8"></script>
     <script src="./app/models/image.js" charset="utf-8"></script>
@@ -32,6 +37,7 @@
     <script src="./app/controllers/ApplicationController.js" charset="utf-8"></script>
     <script src="./app/controllers/GameController.js" charset="utf-8"></script>
     <script src="./app/controllers/GuessController.js" charset="utf-8"></script>
+    <script src="./app/controllers/ImageController.js" charset="utf-8"></script>
     <script src="./app/app.js" charset="utf-8"></script>
   </body>
 </html>

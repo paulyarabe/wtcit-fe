@@ -1,19 +1,30 @@
 class GuessController extends ApplicationController {
 
+    createGuessHTML(){
+      return `<ul>${Guess.all.map(guess => '<li>' + guess.text + '</li>').reverse().join("")}</ul>`
+    }
+
+    checkGuess(image, guess, user){
+      if (image.answers.includes(guess.text)){
+        imageController.stopCrop()
+        let html = `<h3>${user.name} wins!!</h3><p>The answer was: ${guess.text}</p>`
+        $("#alert-banner").css("background", "green")
+        $("#guess").hide()
+        this.render(html, "#alert-banner")
+      }
+      else {
+        this.render(this.createGuessHTML(), "#wrong-guess-list")
+      }
+    }
+
     createGuess(){
       $('body').on('submit', '#guess', function(event){
         event.preventDefault()
-        let imageId = parseInt(event.currentTarget[1].dataset.imageid)
-        let newUser = new User(event.currentTarget[0].value)
-        let newGuess = new Guess(imageId, newUser.id, event.currentTarget[1].value)
+        let image = Image.find(parseInt(event.currentTarget[1].dataset.imageid))
+        let user = User.find_or_create_by_name(event.currentTarget[0].value)
+        let guess = new Guess(image, user, event.currentTarget[1].value.toLowerCase())
         event.currentTarget[1].value = ""
-        let currentImage = Image.find(imageId)
-        if (currentImage.answer.includes(newGuess.text.toLowerCase())) {
-	         console.log("correct")
-         }
-        else {
-	         console.log("false")
-         }
+        guessController.checkGuess(image, guess, user) //TODO Post request!
       })
     }
 

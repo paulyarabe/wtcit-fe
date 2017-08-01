@@ -5,10 +5,11 @@ class GameController extends ApplicationController {
       <label>Username:</label>
       <input type="text" name="username" value=""><br>
       <label>Guess:</label>
-      <input type="text" data-imageid="${image.id}" name="guess" value=""><br>
+      <input type="text" data-imageid="${image.id}" name="guess" value="" required><br>
       <input type="submit" value="guess!">
     </form>`
-    gameController.render(html, '.guessForm')
+    this.render(html, '.guessForm')
+    $("#wrong-guess-section").css("display", "block")
   }
 
   createAndRenderImage(images, categoryId){
@@ -34,12 +35,14 @@ class GameController extends ApplicationController {
     })
   }
 
-
   startGame(){
     $('#start-game').on('submit', function(event){
       event.preventDefault()
       let category = new Category(event.currentTarget[0].value)
+      $('#start-game').empty()
+      $("#imagefromAPI").css("height", "400px")
       gameController.getImage(category)
+      imageController.startCrop(2)
     })
   }
 
