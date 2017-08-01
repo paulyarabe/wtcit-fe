@@ -16,7 +16,7 @@ class GameController extends ApplicationController {
       event.preventDefault()
       let category = new Category(event.currentTarget[0].value)
       let img = new Image('https://s-media-cache-ak0.pinimg.com/originals/da/dc/d4/dadcd453713f86372e4297352939976b.jpg', 'Robert Downey Jr.', category.id)
-      gameController.render(`<img src="${img.url}" alt="placeholder" height="400px">`, '#imagefromAPI')
+      gameController.render(`<img id = "game-image" src="${img.url}" alt="placeholder" height="400px">`, '#imagefromAPI')
       gameController.createGuessForm(img)
     })
   }
