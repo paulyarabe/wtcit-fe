@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  loadCategories()
   gameController = new GameController()
   gameController.init()
   guessController = new GuessController()
@@ -7,37 +8,11 @@ $(document).ready(function(){
   imageController.init()
 })
 
-function cropImage(index){
-  let h = parseInt($("#game-image").css("height"))
-  let w = parseInt($("#game-image").css("width"))
-  let sections = [
-    // Top left
-    `rect(${h/3.0*0}px, ${w/3.0*1}px, ${h/3.0*1}px, ${w/3.0*0}px)`,
-    // Top middle
-    `rect(${h/3.0*0}px, ${w/3.0*2}px, ${h/3.0*1}px, ${w/3.0*1}px)`,
-    // Top right
-    `rect(${h/3.0*0}px, ${w/3.0*3}px, ${h/3.0*1}px, ${w/3.0*2}px)`,
-    // Middle left
-    `rect(${h/3.0*1}px, ${w/3.0*1}px, ${h/3.0*2}px, ${w/3.0*0}px)`,
-    // Middle middle
-    `rect(${h/3.0*1}px, ${w/3.0*2}px, ${h/3.0*2}px, ${w/3.0*1}px)`,
-    // Middle right
-    `rect(${h/3.0*1}px, ${w/3.0*3}px, ${h/3.0*2}px, ${w/3.0*2}px)`,
-    // Bottom left
-    `rect(${h/3.0*2}px, ${w/3.0*1}px, ${h/3.0*3}px, ${w/3.0*0}px)`,
-    // Bottom middle
-    `rect(${h/3.0*2}px, ${w/3.0*2}px, ${h/3.0*3}px, ${w/3.0*1}px)`,
-    // Bottom left
-    `rect(${h/3.0*2}px, ${w/3.0*3}px, ${h/3.0*3}px, ${w/3.0*2}px)`
-  ]
-  setInterval(function(){
-    let index = Math.floor(Math.random()*sections.length)
-    $("#game-image").css("clip", `${sections[index]}`)
-    console.log($("#game-image").css("clip"))
-  }, 1000)
-}
-
-function unCropImage(){
-  $("#game-image").css("position", "absolute")
-  $("#game-image").css("clip", "auto")
+function loadCategories(){ //TODO: refactor this into another controller
+  const categories = ["animals", "backgrounds", "buildings", "business", "computer", "education", "feelings", "food", "health", "industry", "music", "nature", "people", "places", "religion", "science", "sports", "transportation", "travel", "fashion"]
+  let categoriesHTML = ""
+  categories.forEach( category => {
+    categoriesHTML += `<option value=${category}>${category}</option>`
+  })
+  $('.category').append(categoriesHTML)
 }
