@@ -3,10 +3,11 @@ $(document).ready(function(){
   gameController.init()
   guessController = new GuessController()
   guessController.init()
+  imageController = new ImageController()
+  imageController.init()
 })
 
 function cropImage(index){
-  $("#game-image").css("position", "absolute")
   let h = parseInt($("#game-image").css("height"))
   let w = parseInt($("#game-image").css("width"))
   let sections = [
@@ -32,6 +33,7 @@ function cropImage(index){
   setInterval(function(){
     let index = Math.floor(Math.random()*sections.length)
     $("#game-image").css("clip", `${sections[index]}`)
+    console.log($("#game-image").css("clip"))
   }, 1000)
 }
 
