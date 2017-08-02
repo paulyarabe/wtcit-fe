@@ -6,6 +6,7 @@ function createGame(){
     constructor(name){
       this.id = undefined
       this.name = name
+      this.image_id = undefined
       all.push(this)
     }
 
