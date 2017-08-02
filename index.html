@@ -35,13 +35,18 @@
           </div>
         </div>
         <div id="comment-container" class="col-sm-4">
+          <div id="comment-container" style="display:none;">
+            <h3>Trash Talk here:</h3>
+            <div id="comment-list" style="height:400px; width:300px; border:1px solid; overflow:auto;">
+          </div>
+     </div>
+          <div class="comment-form"></div>
         </div>
       </div>
     </div>
     </div>
     <div id="seeder">
       <div id="api-image"></div>
-
       <div id="load-button">
         <input id="seed-category" type="text" name="category" value="" placeholder="category">
         <input id="load-image" type="submit" name="submit" value="load image">
@@ -57,7 +62,9 @@
       <script src="./app/controllers/ApplicationController.js" charset="utf-8"></script>
       <script src="./app/controllers/GameController.js" charset="utf-8"></script>
       <script src="./app/controllers/GuessController.js" charset="utf-8"></script>
+      <script src="./app/controllers/CommentController.js" charset="utf-8"></script>
       <script src="./app/controllers/ImageController.js" charset="utf-8"></script>
       <script src="./app/app.js" charset="utf-8"></script>
+
   </body>
 </html>

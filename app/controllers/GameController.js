@@ -32,6 +32,16 @@ class GameController extends ApplicationController {
     $("#guess-container").css("display", "block")
   }
 
+  createCommentForm(){
+    let html = `<form id="comment" action="#" method="post">
+      <label>Comment:</label>
+      <input type="text" name="comment" value="" required><br>
+      <input type="submit" value="Say something!">
+    </form>`
+    this.render(html, '.comment-form')
+    $("#comment-container").css("display", "block")
+  }
+
   initializeNewGame(){
     $("body").on('submit', '#start-game', function(event){
       event.preventDefault()
@@ -41,7 +51,9 @@ class GameController extends ApplicationController {
       $("#image-container").css("height", "300px")
       imageController.getImageAndGame(category, game)
       .then(gameController.createGuessForm)
+      .then(gameController.createCommentForm()
     })
+
   }
 
   resetPage(){

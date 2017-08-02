@@ -5,4 +5,6 @@ $(document).ready(function(){
   guessController.init()
   imageController = new ImageController()
   imageController.init()
+  commentController = new CommentController()
+  commentController.init()
 })
