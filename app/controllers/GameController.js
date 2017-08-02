@@ -53,6 +53,8 @@ class GameController extends ApplicationController {
   }
 
   init(){
+
+    // loadImageSeeder()
     this.displayNewGameForm()
     this.initializeNewGame()
     this.resetPage()
