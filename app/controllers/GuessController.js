@@ -13,7 +13,7 @@ class GuessController extends ApplicationController {
         this.render(html, "#alert-banner")
       }
       else {
-        this.render(this.createGuessHTML(), "#wrong-guess-list")
+        this.render(this.createGuessHTML(), "#guess-list")
       }
     }
 

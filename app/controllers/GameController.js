@@ -8,8 +8,8 @@ class GameController extends ApplicationController {
       <input type="text" data-imageid="${image.id}" name="guess" value="" required><br>
       <input type="submit" value="guess!">
     </form>`
-    this.render(html, '.guessForm')
-    $("#wrong-guess-section").css("display", "block")
+    this.render(html, '.guess-form')
+    $("#guess-container").css("display", "block")
   }
 
   createAndRenderImage(json_data, category, game){
@@ -18,7 +18,7 @@ class GameController extends ApplicationController {
     image.id = json_data.id
     game.image_id = image.id
     //TODO only set height below, let width be auto
-    gameController.render(`<img src="${image.url}" id="game-image" alt="placeholder" height="300px" width="300px" style="position: absolute; display:none">`, '#imagefromAPI')
+    gameController.render(`<img src="${image.url}" id="game-image" alt="placeholder" height="300px" width="300px" style="position: absolute; display:none">`, '#image-container')
     gameController.createGuessForm(image)
     imageController.startCrop(2)
   }
@@ -38,7 +38,7 @@ class GameController extends ApplicationController {
       event.preventDefault()
       let category = new Category(event.currentTarget[0].value)
       $('#start-game').empty()
-      $("#imagefromAPI").css("height", "450px")
+      $("#image-container").css("height", "450px")
       gameController.getImage(category, game)
     })
   }

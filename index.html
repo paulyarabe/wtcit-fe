@@ -9,25 +9,26 @@
   </head>
   <body>
     <h1>What The Crop Is That?</h1>
-    <div id="alert-banner">
-    </div>
-    <div class="imageCategories">
+
+    <div id="alert-banner"></div>
+
+    <div id="image-categories">
       <form id="start-game" action="index.html" method="post">
         <label>Choose a Category:</label>
         <select class="category" name="categories"></select>
         <input type="submit" value="Start Game">
       </form><br>
     </div>
-    <div id="imagefromAPI">
-    </div><br>
 
-    <div class="guessForm">
+    <div id="image-container"></div><br>
+
+    <div class="guess-form">
     </div>
 
-    <div id="wrong-guess-section" style="display:none;">
+    <div id="guess-container" style="display:none;">
       <h3>Guesses Made:</h3>
-    <div id="wrong-guess-list" style="height:400px; width:300px; border:1px solid; overflow:auto;">
-    </div>
+      <div id="guess-list" style="height:400px; width:300px; border:1px solid; overflow:auto;">
+      </div>
     </div>
 
     <script src="./app/models/category.js" charset="utf-8"></script>
