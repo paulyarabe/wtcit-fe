@@ -51,7 +51,7 @@ class GameController extends ApplicationController {
       $("#image-container").css("height", "300px")
       imageController.getImageAndGame(category, game)
       .then(gameController.createGuessForm)
-      .then(gameController.createCommentForm()
+      .then(gameController.createCommentForm())
     })
 
   }
