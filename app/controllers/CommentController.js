@@ -1,5 +1,9 @@
 class CommentController extends ApplicationController {
 
+    displayCommentForm(){
+      commentController.render(Form.comment(), '.comment-form')
+    }
+
     createCommentHTML(){
       return `<ul>${Comment.all.map(comment => '<li>' + comment.text + '</li>').reverse().join("")}</ul>`
     }
@@ -25,6 +29,7 @@ class CommentController extends ApplicationController {
     }
 
     init(){
+      this.displayCommentForm()
       this.createComment()
     }
 }

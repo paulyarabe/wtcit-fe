@@ -14,6 +14,10 @@ function createGame(){
       return all
     }
 
+    static get last(){
+      return all[all.length-1]
+    }
+
     static find(id){
       return this.all.filter(game => game.id === id)[0]
     }

@@ -19,23 +19,25 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
-          <h1>What The Crop Is That?</h1>
+        <h1 align="center">What The Crop Is That?</h1>
 
-          <div id="alert-banner" class="game-div-js"></div>
-          <div id="new-game-container" class="game-div-js"></div>
-          <div id="image-container" class="game-div-js"></div><br>
-          <div id="guess-form" class="game-div-js"></div>
-        </div>
         <div class="col-sm-4">
-          <div id="guess-container"  class="game-div-js"style="display:none;">
+          <div id="guess-container">
             <h3 align='center'>Guesses Made</h3>
             <div id="guess-list"  class="game-div-js" style="height:400px; width:300px; border:1px solid; overflow:auto;">
             </div>
           </div>
         </div>
+        <div class="col-sm-4">
+
+          <div id="alert-banner" class="game-div-js"></div>
+          <div id="new-game-container" class="game-div-js"></div>
+          <div id="image-container" class="game-div-js" style="height:400px"></div><br>
+          <div id="guess-form" class="game-div-js"></div>
+        </div>
+
         <div id="comment-container" class="col-sm-4" padding-top: "20px">
-          <div id="comment-container" style="display:none;">
+          <div id="comment-container">
             <h3>Trash Talk here:</h3>
             <div id="comment-list" style="height:400px; width:300px; border:1px solid; overflow:auto;">
           </div>
@@ -53,18 +55,21 @@
       </div>
     </div>
 
-      <script src="./app/seed.js" charset="utf-8"></script>
-      <script src="./app/models/category.js" charset="utf-8"></script>
-      <script src="./app/models/image.js" charset="utf-8"></script>
-      <script src="./app/models/guess.js" charset="utf-8"></script>
-      <script src="./app/models/user.js" charset="utf-8"></script>
-      <script src="./app/models/game.js" charset="utf-8"></script>
-      <script src="./app/controllers/ApplicationController.js" charset="utf-8"></script>
-      <script src="./app/controllers/GameController.js" charset="utf-8"></script>
-      <script src="./app/controllers/GuessController.js" charset="utf-8"></script>
-      <script src="./app/controllers/CommentController.js" charset="utf-8"></script>
-      <script src="./app/controllers/ImageController.js" charset="utf-8"></script>
-      <script src="./app/app.js" charset="utf-8"></script>
+      <script src="../seed.js" charset="utf-8"></script>
+      <script src="../adapters/CategoryAdapter.js" charset="utf-8"></script>
+      <script src="../adapters/GameAdapter.js" charset="utf-8"></script>
+      <script src="../models/category.js" charset="utf-8"></script>
+      <script src="../models/image.js" charset="utf-8"></script>
+      <script src="../models/guess.js" charset="utf-8"></script>
+      <script src="../models/user.js" charset="utf-8"></script>
+      <script src="../models/game.js" charset="utf-8"></script>
+      <script src="../models/form.js" charset="utf-8"></script>
+      <script src="../controllers/ApplicationController.js" charset="utf-8"></script>
+      <script src="../controllers/GameController.js" charset="utf-8"></script>
+      <script src="../controllers/GuessController.js" charset="utf-8"></script>
+      <script src="../controllers/CommentController.js" charset="utf-8"></script>
+      <script src="../controllers/ImageController.js" charset="utf-8"></script>
+      <script src="../app.js" charset="utf-8"></script>
 
   </body>
 </html>

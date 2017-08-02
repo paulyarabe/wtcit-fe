@@ -12,11 +12,6 @@ class ImageController extends ApplicationController {
     imageController.startCrop(2)
   }
 
-  getImageAndGame(category, game){
-    return fetch(`http://localhost:3000/categories/images?category=${category.name}&game=${game.name}`)
-    .then(resp => resp.json())
-    .then(json => imageController.displayImage(json, category, game))
-  }
 
   get imageSections(){
     let h = parseInt($("#game-image").css("height"))
