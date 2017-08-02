@@ -6,35 +6,39 @@
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h1>What The Crop Is That?</h1>
 
-
-
-    <h1>What The Crop Is That?</h1>
-    <div id="alert-banner">
-    </div>
-    <div class="imageCategories">
-      <form id="start-game" action="index.html" method="post">
-        <label>Choose a Category:</label>
-        <select class="category" name="categories"></select>
-        <input type="submit" value="Start Game">
-      </form><br>
-    </div>
-    <div id="imagefromAPI">
-    </div><br>
-
-    <div class="guessForm">
-    </div>
-
-    <div id="wrong-guess-section" style="display:none;">
-      <h3>Guesses Made:</h3>
-    <div id="wrong-guess-list" style="height:400px; width:300px; border:1px solid; overflow:auto;">
+          <div id="alert-banner" class="game-div-js"></div>
+          <div id="new-game-container" class="game-div-js"></div>
+          <div id="image-container" class="game-div-js"></div><br>
+          <div id="guess-form" class="game-div-js"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="guess-container"  class="game-div-js"style="display:none;">
+            <h3 align='center'>Guesses Made</h3>
+            <div id="guess-list"  class="game-div-js" style="height:400px; width:300px; border:1px solid; overflow:auto;">
+            </div>
+          </div>
+        </div>
+        <div id="comment-container" class="col-sm-4">
+        </div>
+      </div>
     </div>
     </div>
-
-
-
     <div id="seeder">
       <div id="api-image"></div>
 
@@ -44,16 +48,16 @@
       </div>
     </div>
 
-    <script src="./app/seed.js" charset="utf-8"></script>
-    <script src="./app/models/category.js" charset="utf-8"></script>
-    <script src="./app/models/image.js" charset="utf-8"></script>
-    <script src="./app/models/guess.js" charset="utf-8"></script>
-    <script src="./app/models/user.js" charset="utf-8"></script>
-    <script src="./app/models/game.js" charset="utf-8"></script>
-    <script src="./app/controllers/ApplicationController.js" charset="utf-8"></script>
-    <script src="./app/controllers/GameController.js" charset="utf-8"></script>
-    <script src="./app/controllers/GuessController.js" charset="utf-8"></script>
-    <script src="./app/controllers/ImageController.js" charset="utf-8"></script>
-    <script src="./app/app.js" charset="utf-8"></script>
+      <script src="./app/seed.js" charset="utf-8"></script>
+      <script src="./app/models/category.js" charset="utf-8"></script>
+      <script src="./app/models/image.js" charset="utf-8"></script>
+      <script src="./app/models/guess.js" charset="utf-8"></script>
+      <script src="./app/models/user.js" charset="utf-8"></script>
+      <script src="./app/models/game.js" charset="utf-8"></script>
+      <script src="./app/controllers/ApplicationController.js" charset="utf-8"></script>
+      <script src="./app/controllers/GameController.js" charset="utf-8"></script>
+      <script src="./app/controllers/GuessController.js" charset="utf-8"></script>
+      <script src="./app/controllers/ImageController.js" charset="utf-8"></script>
+      <script src="./app/app.js" charset="utf-8"></script>
   </body>
 </html>
