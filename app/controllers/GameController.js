@@ -45,5 +45,6 @@ class GameController extends ApplicationController {
 
   init(){
     this.startGame()
+    loadImageSeeder()
   }
 }
