@@ -7,7 +7,7 @@ function createImage(){
       this.id = undefined
       this.url = url
       this.answer = answer
-      this.categoryId = category.id
+      this.category_id = category.id
       all.push(this)
     }
 

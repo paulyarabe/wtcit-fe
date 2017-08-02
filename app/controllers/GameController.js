@@ -16,7 +16,7 @@ class GameController extends ApplicationController {
     category.id = json_data.category_id
     let image = new Image(json_data.url, json_data.answer, category)
     image.id = json_data.id
-    game.imageId = image.id
+    game.image_id = image.id
     // style="position: absolute; display:none" TODO: add this back in??
     gameController.render(`<img src="${image.url}" id="game-image" alt="placeholder" height="400px"><p>${image.answer}</p>`, '#imagefromAPI')
     gameController.createGuessForm(image)

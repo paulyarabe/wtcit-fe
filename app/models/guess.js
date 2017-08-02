@@ -5,8 +5,8 @@ function createGuess(){
   return class Guess {
     constructor(game, user, text, correct){
       this.id = undefined
-      this.gameId = game.id
-      this.userId = user.id
+      this.game_id = game.id
+      this.user_id = user.id
       this.text = text
       this.correct = correct
       all.push(this)
