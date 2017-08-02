@@ -20,13 +20,13 @@ class GuessController extends ApplicationController {
     createGuess(){
       $('body').on('submit', '#guess', function(event){
         event.preventDefault()
-        let image = Image.find(parseInt(event.currentTarget[1].dataset.imageid))
+        let game = Game.find(parseInt(event.currentTarget[1].dataset.gameid))
         let user = User.find_or_create_by_name(event.currentTarget[0].value)
-        let guess = new Guess(image, user, event.currentTarget[1].value)
+        let guess = new Guess(game, user, event.currentTarget[1].value)
         event.currentTarget[1].value = ""
         let header = new Headers
         header.set('Content-Type', 'application/json')
-        fetch("http://localhost:3000/validate_guess", {
+        fetch("http://localhost:3000/guesses", {
           method:"POST",
           headers: header,
           body: JSON.stringify({guess, user})
