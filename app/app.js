@@ -6,6 +6,8 @@ $(document).ready(function(){
   guessController.init()
   imageController = new ImageController()
   imageController.init()
+  commentController = new CommentController()
+  commentController.init()
 })
 
 function loadCategories(){ //TODO: refactor this into another controller
