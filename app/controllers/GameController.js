@@ -17,8 +17,8 @@ class GameController extends ApplicationController {
     let image = new Image(json_data.url, json_data.answer, category)
     image.id = json_data.id
     game.image_id = image.id
-    // style="position: absolute; display:none" TODO: add this back in??
-    gameController.render(`<img src="${image.url}" id="game-image" alt="placeholder" height="400px"><p>${image.answer}</p>`, '#imagefromAPI')
+    //TODO only set height below, let width be auto
+    gameController.render(`<img src="${image.url}" id="game-image" alt="placeholder" height="300px" width="300px" style="position: absolute; display:none">`, '#imagefromAPI')
     gameController.createGuessForm(image)
     imageController.startCrop(2)
   }
