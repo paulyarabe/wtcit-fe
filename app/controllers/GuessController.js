@@ -7,7 +7,7 @@ class GuessController extends ApplicationController {
     renderGuess(guess, user){
       if (guess.correct){
         imageController.stopCrop()
-        let html = `<h3>${user.name} wins!!</h3><p>The answer was: ${guess.text}</p>`
+        let html = `<h3>${user.name} wins!!</h3><p>The answer was: ${guess.text}</p><form id="reset-page-button" action="#" method="post"><input type="submit" value="New Game"></form>`
         $("#alert-banner").css("background", "green")
         $("#guess").hide()
         this.render(html, "#alert-banner")

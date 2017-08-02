@@ -28,7 +28,7 @@ class GameController extends ApplicationController {
       <input type="text" name="guess[text]" data-gameid="${game_id}" value="" required><br>
       <input type="submit" value="guess!">
     </form>`
-    gameController.render(html, '.guess-form')
+    gameController.render(html, '#guess-form')
     $("#guess-container").css("display", "block")
   }
 
@@ -44,8 +44,17 @@ class GameController extends ApplicationController {
     })
   }
 
+  resetPage(){
+    $("body").on("submit", "#reset-page-button", function(event){
+      event.preventDefault()
+      $(".game-div-js").empty()
+      gameController.displayNewGameForm()
+    })
+  }
+
   init(){
     this.displayNewGameForm()
     this.initializeNewGame()
+    this.resetPage()
   }
 }
