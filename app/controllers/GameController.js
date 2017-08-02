@@ -38,7 +38,7 @@ class GameController extends ApplicationController {
       let game = new Game(event.currentTarget[0].value)
       let category = new Category(event.currentTarget[1].value)
       // $('#new-game-container').empty()
-      $("#image-container").css("height", "450px")
+      $("#image-container").css("height", "300px")
       imageController.getImageAndGame(category, game)
       .then(gameController.createGuessForm)
     })

@@ -8,7 +8,7 @@ class ImageController extends ApplicationController {
     game.image_id = image.id
     //TODO only set height below, let width be auto
     imageController.render(`<h3>Game: ${game.name}</h3>`, '#new-game-container')
-    imageController.render(`<img src="${image.url}" id="game-image" data-id="${image.id}" data-game-id="${game.id}" alt="placeholder" height="300px" width="300px" style="position: absolute; display:none">`, '#image-container')
+    imageController.render(`<img src="${image.url}" id="game-image" data-id="${image.id}" data-game-id="${game.id}" alt="placeholder" height="300px" width="200px" style="position: absolute; display:none;">`, '#image-container')
     imageController.startCrop(2)
   }
 
