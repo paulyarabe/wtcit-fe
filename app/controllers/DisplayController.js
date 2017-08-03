@@ -4,5 +4,5 @@ class DisplayController extends ApplicationController {
     $(selector).empty()
     $(selector).append(html)
   }
-  
+
 }

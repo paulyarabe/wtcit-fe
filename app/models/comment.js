@@ -24,6 +24,28 @@ function createComment(){
       return Comment.all.splice(index,1)[0]
     }
 
+    get user(){
+      return User.all.filter(user => user.id === this.user_id)[0]
+    }
+
+    get game(){
+      return Game.all.filter(game => game.id === this.game_id)[0]
+    }
+
+    get html(){
+      return `<li>${this.user.name}: ${this.text}</li>`
+    }
+
+    static allHTML(game){
+      return `<ul>${Comment.all.map(comment => {
+        // if(comment.game.id === game.id){
+
+          return comment.html
+        // }
+      }).join("")}</ul>`
+
+    }
+
   }
 }
 
