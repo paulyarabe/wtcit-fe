@@ -33,7 +33,7 @@ function createComment(){
     }
 
     get html(){
-      return `<li>${this.user.name}: ${this.text}</li>`
+      return `<p>${this.user.name}: ${this.text}<p>`
     }
 
     static allHTML(game){
