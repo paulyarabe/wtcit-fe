@@ -3,8 +3,8 @@ function createImage(){
   let all = []
 
   return class Image {
-    constructor(url, answer, category){
-      this.id = undefined
+    constructor(id, url, answer, category){
+      this.id = id
       this.url = url
       this.answer = answer
       this.category_id = category.id

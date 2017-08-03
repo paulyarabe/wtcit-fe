@@ -3,8 +3,8 @@ function createGuess(){
   let all = []
 
   return class Guess {
-    constructor(game, user, text, correct){
-      this.id = undefined
+    constructor(id, game, user, text, correct){
+      this.id = id
       this.game_id = game.id
       this.user_id = user.id
       this.text = text

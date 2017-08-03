@@ -3,10 +3,11 @@ function createGame(){
   let all = []
 
   return class Game {
-    constructor(name){
-      this.id = undefined
+    constructor(id, image, name, complete){
+      this.id = id
+      this.image_id = image.id
       this.name = name
-      this.image_id = undefined
+      this.complete = complete
       all.push(this)
     }
 

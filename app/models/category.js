@@ -3,8 +3,8 @@ function createCategory(){
   let all = []
 
   return class Category {
-    constructor(name){
-      this.id = undefined
+    constructor(id, name){
+      this.id = id
       this.name = name
       all.push(this)
     }

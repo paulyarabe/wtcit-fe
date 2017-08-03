@@ -3,11 +3,11 @@ function createComment(){
   let all = []
 
   return class Comment {
-    constructor(user, text){
-      this.id = undefined
+    constructor(id, user, text, game={}){
+      this.id = id
       this.user_id = user.id
       this.text = text
-      this.game_id = undefined
+      this.game_id = game.id
       all.push(this)
     }
 

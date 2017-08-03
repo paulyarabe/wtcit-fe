@@ -23,7 +23,6 @@ function createUser(){
 
     static find_or_create_by_json(userJSON){
       let match = User.find_by_name(userJSON.name)
-      // debugger
       return match? match : new User(userJSON.id, userJSON.name)
     }
 
