@@ -10,7 +10,7 @@ class GameController extends ApplicationController {
   }
 
   displayGuessForm(){
-    gameController.render(Form.guess(), '#guess-form')
+    DisplayController.render(Form.guess(), '#guess-form')
   }
 
   createNewGame(){
@@ -38,11 +38,11 @@ class GameController extends ApplicationController {
     if (guess.correct){
       imageController.stopCrop()
       $("#guess").hide()
-      this.render(guess.winnerHTML, "#alert-banner")
+      DisplayController.render(guess.winnerHTML, "#alert-banner")
       DisplayController.render(Form.newGame(Category.all), '#new-game-container')
     }
     else {
-      this.render(Guess.allHTML(guess.game), "#guess-list")
+      DisplayController.render(Guess.allHTML(guess.game), "#guess-list")
     }
   }
 

@@ -1,7 +1,7 @@
 class CommentController extends ApplicationController {
 
     displayCommentForm(){
-      commentController.render(Form.comment(), '.comment-form')
+      DisplayController.render(Form.comment(), '.comment-form')
     }
 
     createComment(){
