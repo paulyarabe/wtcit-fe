@@ -35,14 +35,12 @@ class GameController extends ApplicationController {
   }
 
   updateStatus(guess){
+    DisplayController.render(Guess.allHTML(guess.game), "#guess-list")
     if (guess.correct){
       imageController.stopCrop()
       $("#guess").hide()
       DisplayController.render(guess.winnerHTML, "#alert-banner")
       DisplayController.render(Form.newGame(Category.all), '#new-game-container')
-    }
-    else {
-      DisplayController.render(Guess.allHTML(guess.game), "#guess-list")
     }
   }
 

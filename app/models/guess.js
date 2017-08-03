@@ -34,7 +34,8 @@ function createGuess(){
     }
 
     get html(){
-      return '<li>' + this.text + '</li>'
+      return `<p>${this.user.name}: ${this.text}</p>`
+      // return '<li>' + this.text + '</li>'
     }
 
     get winnerHTML(){

@@ -6,7 +6,6 @@ class ImageController extends ApplicationController {
     imageController.startCrop(2)
   }
 
-
   static get imageSections(){
     let h = parseInt($("#game-image").css("height"))
     let w = parseInt($("#game-image").css("width"))
