@@ -15,6 +15,10 @@ function createImage(){
       return all
     }
 
+    static get last(){
+      return all[all.length-1]
+    }
+
     static find(id){
       return this.all.filter(function(image){
         return image.id === id
@@ -24,6 +28,10 @@ function createImage(){
     destroy(){
       let index = Image.all.indexOf(this)
       return Image.all.splice(index,1)[0]
+    }
+
+    get html(){
+      return `<img src="${this.url}" id="game-image" data-id="${this.id}" alt="placeholder" height="300px" width="200px" style="position: absolute; display:none;">`
     }
 
   }

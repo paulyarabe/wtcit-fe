@@ -9,6 +9,12 @@ function createCategory(){
       all.push(this)
     }
 
+    static constructMany(json){
+      json.forEach(category => {
+        new Category(category.id, category.name)
+      })
+    }
+
     static get all(){
       return all
     }

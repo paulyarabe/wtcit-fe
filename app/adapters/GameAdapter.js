@@ -3,9 +3,19 @@ class GameAdapter {
   constructor() {
   }
 
-  static create(category, game){
-    return fetch(`http://localhost:3000/categories/images?category=${category.name}&game=${game.name}`)
+  static create(gameName, category){
+    let header = new Headers
+    header.set('Content-Type', 'application/json')
+    return fetch("http://localhost:3000/games", {
+      method:"POST",
+      headers: header,
+      body: JSON.stringify({gameName, category})
+    })
     .then(resp => resp.json())
-    // .then(json => {debugger})TODO: GameAdapter should update store
+    .then(json => {
+      new Game(json.game.id, json.image, json.game.name, json.game.complete);
+      new Image(json.image.id, json.image.url, json.image.answer, Category.find(json.image.category_id))
+      })
   }
+
 }

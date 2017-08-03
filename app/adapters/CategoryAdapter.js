@@ -4,6 +4,8 @@ class CategoryAdapter {
   }
 
   static index(){
-    return fetch("http://localhost:3000/categories").then(resp => resp.json())
+    return fetch("http://localhost:3000/categories")
+    .then(resp => resp.json())
+    .then(Category.constructMany)
   }
 }

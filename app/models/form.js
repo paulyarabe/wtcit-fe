@@ -9,7 +9,7 @@ class Form {
       <input type="text" name="game[name]" required><br>
       <label>Choose a Category:</label>
       <select class="category" name="game[categories]">
-      ${json.map(category => `<option data-id=${category.id}>${category.name}</option>`).join("")}
+      ${Category.all.map(category => `<option data-id=${category.id}>${category.name}</option>`).join("")}
       </select><br>
       <input type="submit" value="Start Game">
       </form><br>`

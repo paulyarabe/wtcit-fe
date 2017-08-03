@@ -1,19 +1,13 @@
 class ImageController extends ApplicationController {
 
-  displayImage(json_data, category, game){
-    category.id = json_data.image.category_id
-    let image = new Image(json_data.image.url, json_data.image.answer, category)
-    image.id = json_data.image.id
-    game.id = json_data.game.id
-    game.image_id = image.id
-    //TODO only set height below, let width be auto
-    imageController.render(`<h3>Game: ${game.name}</h3>`, '#new-game-container')
-    imageController.render(`<img src="${image.url}" id="game-image" data-id="${image.id}" data-game-id="${game.id}" alt="placeholder" height="300px" width="200px" style="position: absolute; display:none;">`, '#image-container')
+  displayImage(){
+    let image = Image.last
+    DisplayController.render(image.html, '#image-container')
     imageController.startCrop(2)
   }
 
 
-  get imageSections(){
+  static get imageSections(){
     let h = parseInt($("#game-image").css("height"))
     let w = parseInt($("#game-image").css("width"))
     return [
@@ -39,8 +33,8 @@ class ImageController extends ApplicationController {
   }
 
   startCrop(interval){
+    let sections = ImageController.imageSections
     $("#game-image").css("display", "block")
-    let sections = this.imageSections
     $("#game-image").css("clip", `${sections[Math.floor(Math.random()*sections.length)]}`)
     window.cropInterval = setInterval(function(){
       $("#game-image").css("clip", `${sections[Math.floor(Math.random()*sections.length)]}`)

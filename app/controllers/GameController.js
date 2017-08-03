@@ -1,8 +1,12 @@
 class GameController extends ApplicationController {
 
   displayNewGameForm(){
-    CategoryAdapter.index()
-    .then(json => gameController.render(Form.newGame(json), '#new-game-container'))
+    DisplayController.render(Form.newGame(Category.all), '#new-game-container')
+  }
+
+  displayGameName(){
+    let game = Game.last
+    DisplayController.render(game.nameHTML, '#new-game-container')
   }
 
   displayGuessForm(){
@@ -12,12 +16,12 @@ class GameController extends ApplicationController {
   createNewGame(){
     $("body").on('submit', '#start-game', function(event){
       event.preventDefault()
-      let game = new Game(event.currentTarget[0].value)
-      //TODO: let game = Game.find(Game.last.id)
-      let category = new Category(event.currentTarget[1].value)
-      GameAdapter.create(category, game)
-      .then(json => imageController.displayImage(json, category, game))
+      let gameName = event.currentTarget[0].value
+      let category = Category.find_by_name(event.currentTarget[1].value)
+      GameAdapter.create(gameName, category)
+      .then(gameController.displayGameName)
       .then(gameController.displayGuessForm)
+      .then(imageController.displayImage)
     })
 
   }
@@ -44,8 +48,6 @@ class GameController extends ApplicationController {
   }
 
   init(){
-
-    // loadImageSeeder()
     this.displayNewGameForm() //TODO pull this out into a "session" controller; needs to load all users!
     this.createNewGame()
     this.resetPage()

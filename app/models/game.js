@@ -28,6 +28,14 @@ function createGame(){
       return Game.all.splice(index,1)[0]
     }
 
+    get image(){
+      return Image.all.filter(image => image.id === this.image_id)[0]
+    }
+
+    get nameHTML(){
+      return `<h3>Game: ${this.name}</h3>`
+    }
+
   }
 }
 
