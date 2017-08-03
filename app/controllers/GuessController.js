@@ -1,9 +1,5 @@
 class GuessController extends ApplicationController {
 
-    createGuessHTML(){
-      return `<ul>${Guess.all.map(guess => '<li>' + guess.text + '</li>').reverse().join("")}</ul>`
-    }
-
     renderGuess(guess, user){
       if (guess.correct){
         imageController.stopCrop()
@@ -13,24 +9,19 @@ class GuessController extends ApplicationController {
         this.render(html, "#alert-banner")
       }
       else {
-        this.render(this.createGuessHTML(), "#guess-list")
+        this.render(Guess.allHTML(), "#guess-list")
       }
     }
 
     createGuess(){
       $('body').on('submit', '#guess', function(event){
         event.preventDefault()
-        let game = Game.find(parseInt(event.currentTarget[1].dataset.gameid))
-        let user = User.find_or_create_by_name(event.currentTarget[0].value)
-        let guess = new Guess(game, user, event.currentTarget[1].value)
+        let game = Game.find(parseInt(event.currentTarget[1].dataset.gameid)) //TODO: let game = Game.find(Game.last.id)
+        let user = User.find_or_create_by_name(event.currentTarget[0].value) //TODO: fetch backend
+        let guess = new Guess(game, user, event.currentTarget[1].value) 
         event.currentTarget[1].value = ""
-        let header = new Headers
-        header.set('Content-Type', 'application/json')
-        fetch("http://localhost:3000/guesses", {
-          method:"POST",
-          headers: header,
-          body: JSON.stringify({guess, user})
-        }).then(resp => resp.json()).then(json => guessController.renderGuess(json, user))
+        GuessAdapter.create(guess, user)
+        .then(guess => gameController.updateStatus(guess))
       })
     }
 

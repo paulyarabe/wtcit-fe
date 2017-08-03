@@ -25,6 +25,22 @@ function createGuess(){
       return Guess.all.splice(index,1)[0]
     }
 
+    get html(){
+      return '<li>' + this.text + '</li>'
+    }
+
+    // static allHTML(gameId){
+    //   return `<ul>${Guess.all.map(guess => {
+    //     if(guess.game_id === gameId){
+    //       return guess.html
+    //     }
+    //   }).reverse().join("")}</ul>`
+    // }
+
+    static allHTML(){
+      return `<ul>${Guess.all.map(guess => { return guess.html }).reverse().join("")}</ul>`
+    }
+
   }
 }
 
