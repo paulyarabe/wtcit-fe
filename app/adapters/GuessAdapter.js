@@ -1,7 +1,6 @@
 class GuessAdapter {
 
-  constructor(){
-
+  constructor() {
   }
 
   static create(userName, guessText, game){

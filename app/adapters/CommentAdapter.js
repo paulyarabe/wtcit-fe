@@ -1,7 +1,6 @@
 class CommentAdapter {
 
-  constructor(){
-
+  constructor() {
   }
 
   static create(userName, commentText, game){

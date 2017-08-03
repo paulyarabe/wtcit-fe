@@ -1,5 +1,6 @@
 $(document).ready(function(){
   // Actions that happen on page load for all users joining page
+  SessionController.syncGame()
   CategoryAdapter.index()
   .then(function(){
     // create controllers

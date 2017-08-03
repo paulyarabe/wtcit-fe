@@ -3,6 +3,11 @@ class GameAdapter {
   constructor() {
   }
 
+  static current(){
+    return fetch("http://localhost:3000/games/current")
+    .then()
+  }
+
   static create(gameName, category){
     let header = new Headers
     header.set('Content-Type', 'application/json')
