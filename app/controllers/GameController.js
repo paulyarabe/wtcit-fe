@@ -46,7 +46,7 @@ class GameController extends ApplicationController {
   init(){
 
     // loadImageSeeder()
-    this.displayNewGameForm() //TODO pull this out into a "session" controller
+    this.displayNewGameForm() //TODO pull this out into a "session" controller; needs to load all users!
     this.createNewGame()
     this.resetPage()
   }

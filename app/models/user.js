@@ -3,8 +3,8 @@ function createUser(){
   let all = []
 
   return class User {
-    constructor(name){
-      this.id = undefined
+    constructor(id, name){
+      this.id = id
       this.name = name
       all.push(this)
     }
@@ -21,9 +21,10 @@ function createUser(){
       return this.all.filter(user => user.name === name)[0]
     }
 
-    static find_or_create_by_name(name){
-      let match = this.find_by_name(name)
-      return match? match : new User(name)
+    static find_or_create_by_json(userJSON){
+      let match = User.find_by_name(userJSON.name)
+      // debugger
+      return match? match : new User(userJSON.id, userJSON.name)
     }
 
     destroy(){

@@ -17,8 +17,9 @@ class GuessController extends ApplicationController {
       $('body').on('submit', '#guess', function(event){
         event.preventDefault()
         let game = Game.find(parseInt(event.currentTarget[1].dataset.gameid)) //TODO: let game = Game.find(Game.last.id)
-        let user = User.find_or_create_by_name(event.currentTarget[0].value) //TODO: fetch backend
-        let guess = new Guess(game, user, event.currentTarget[1].value) 
+        // let user = User.find_or_create_by_name(event.currentTarget[0].value) //TODO: fetch backend
+        let user = UserAdapter.retrieve(event.currentTarget[0].value).then(User.find_or_create_by_json)
+        let guess = new Guess(game, user, event.currentTarget[1].value)
         event.currentTarget[1].value = ""
         GuessAdapter.create(guess, user)
         .then(guess => gameController.updateStatus(guess))
