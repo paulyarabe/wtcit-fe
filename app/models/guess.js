@@ -25,21 +25,34 @@ function createGuess(){
       return Guess.all.splice(index,1)[0]
     }
 
+    get user(){
+      return User.all.filter(user => user.id === this.user_id)[0]
+    }
+
+    get game(){
+      return Game.all.filter(game => game.id === this.game_id)[0]
+    }
+
     get html(){
       return '<li>' + this.text + '</li>'
     }
 
-    // static allHTML(gameId){
-    //   return `<ul>${Guess.all.map(guess => {
-    //     if(guess.game_id === gameId){
-    //       return guess.html
-    //     }
-    //   }).reverse().join("")}</ul>`
-    // }
-
-    static allHTML(){
-      return `<ul>${Guess.all.map(guess => { return guess.html }).reverse().join("")}</ul>`
+    get winnerHTML(){
+      $("#alert-banner").css("background", "green")
+      return `<h3>${this.user.name} wins ${Game.last.name}!!!</h3><p>The answer was: ${this.text}</p>`
     }
+
+    static allHTML(game){
+      return `<ul>${Guess.all.map(guess => {
+        if(guess.game.id === game.id){
+          return guess.html
+        }
+      }).reverse().join("")}</ul>`
+    }
+
+    // static allHTML(){
+    //   return `<ul>${Guess.all.map(guess => { return guess.html }).reverse().join("")}</ul>`
+    // }
 
   }
 }

@@ -37,13 +37,12 @@ class GameController extends ApplicationController {
   updateStatus(guess){
     if (guess.correct){
       imageController.stopCrop()
-      let html = `<h3>${User.find(guess.user_id).name} wins!!</h3><p>The answer was: ${guess.text}</p><form id="reset-page-button" action="#" method="post"><input type="submit" value="New Game"></form>`
-      $("#alert-banner").css("background", "green")
       $("#guess").hide()
-      this.render(html, "#alert-banner")
+      this.render(guess.winnerHTML, "#alert-banner")
+      DisplayController.render(Form.newGame(Category.all), '#new-game-container')
     }
     else {
-      this.render(Guess.allHTML(), "#guess-list")
+      this.render(Guess.allHTML(guess.game), "#guess-list")
     }
   }
 

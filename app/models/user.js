@@ -21,9 +21,9 @@ function createUser(){
       return this.all.filter(user => user.name === name)[0]
     }
 
-    static find_or_create_by_json(userJSON){
-      let match = User.find_by_name(userJSON.name)
-      return match? match : new User(userJSON.id, userJSON.name)
+    static find_or_create(user){
+      let match = User.find(user.id)
+      return match ? match : new User(user.id, user.name)
     }
 
     destroy(){
