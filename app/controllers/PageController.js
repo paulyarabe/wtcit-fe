@@ -15,8 +15,6 @@ class PageController extends ApplicationController {
     <!-- Row2 -->
     <div class="row">
 
-      <!-- <div id="alert-banner" class="game-div-js"></div>
-      <div id="new-game-container" class="game-div-js"></div> -->
       <div id="status-container" class="game-div-js"></div>
 
     </div>

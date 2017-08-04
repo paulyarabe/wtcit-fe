@@ -52,16 +52,19 @@ function createGuess(){
       // return '<li>' + this.text + '</li>'
     }
 
+    static allHTML(game){
+      return `<ul>${Guess.all.map(guess => {
+          return guess.html
+      }).join("")}</ul>`
+
+    }
+
     get winnerHTML(){
       return `<div id="win-banner"><h3>${this.user.name} wins ${Game.last.name}!!!</h3><p>The answer was: ${this.text}</p></div>`
     }
 
     static allHTML(game){
-      return `<ul>${Guess.all.map(guess => {
-        if(guess.game.id === game.id){
-          return guess.html
-        }
-      }).reverse().join("")}</ul>`
+      return `<ul>${Guess.all.map(guess => {return guess.html}).reverse().join("")}</ul>`
     }
 
   }
