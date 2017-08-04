@@ -1,0 +1,29 @@
+body {
+    background-color: ;
+}
+
+#alert-banner {
+  background-color: green;
+}
+
+.guesses-comments-js {
+  height: 400px;
+  width: 300px;
+  border:1px solid;
+  overflow:auto;
+}
+
+.image-js {
+  height:400px;
+}
+
+#game-image {
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  display: none;
+}
+
+#footer {
+  text-align: center;
+}

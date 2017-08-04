@@ -37,6 +37,10 @@ function createCategory(){
       return Category.all.splice(index,1)[0]
     }
 
+    static get allHTML(){
+      return this.all.map(category => `<option data-id=${category.id}>${category.name}</option>`).join("")
+    }
+
   }
 }
 

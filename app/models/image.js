@@ -31,7 +31,7 @@ function createImage(){
     }
 
     get html(){
-      return `<img src="${this.url}" id="game-image" data-id="${this.id}" alt="placeholder" height="400px" width="300px" style="position: absolute; display:none;">`
+      return `<img src="${this.url}" id="game-image" data-id="${this.id}" alt="placeholder">`
     }
 
   }

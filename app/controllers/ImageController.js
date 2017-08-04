@@ -2,7 +2,7 @@ class ImageController extends ApplicationController {
 
   displayImage(){
     let image = Image.last
-    DisplayController.render(image.html, '#image-container')
+    DisplayController.render(image.html, '#image-box')
     imageController.startCrop(2)
   }
 

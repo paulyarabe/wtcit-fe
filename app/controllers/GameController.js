@@ -1,7 +1,8 @@
 class GameController extends ApplicationController {
 
   displayNewGameForm(){
-    DisplayController.render(Form.newGame(Category.all), '#new-game-container')
+    DisplayController.render(Form.newGame, '#new-game-container')
+    DisplayController.render(Form.userName, '#username-input')
   }
 
   displayGameName(){
@@ -10,7 +11,7 @@ class GameController extends ApplicationController {
   }
 
   displayGuessForm(){
-    DisplayController.render(Form.guess(), '#guess-form')
+    DisplayController.render(Form.guess, '#guess-form')
   }
 
   createNewGame(){
@@ -40,7 +41,7 @@ class GameController extends ApplicationController {
       imageController.stopCrop()
       $("#guess").hide()
       DisplayController.render(guess.winnerHTML, "#alert-banner")
-      DisplayController.render(Form.newGame(Category.all), '#new-game-container')
+      DisplayController.render(Form.newGame, '#new-game-container')
     }
   }
 

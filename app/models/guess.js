@@ -39,7 +39,6 @@ function createGuess(){
     }
 
     get winnerHTML(){
-      $("#alert-banner").css("background", "green")
       return `<h3>${this.user.name} wins ${Game.last.name}!!!</h3><p>The answer was: ${this.text}</p>`
     }
 
@@ -50,10 +49,6 @@ function createGuess(){
         }
       }).reverse().join("")}</ul>`
     }
-
-    // static allHTML(){
-    //   return `<ul>${Guess.all.map(guess => { return guess.html }).reverse().join("")}</ul>`
-    // }
 
   }
 }
