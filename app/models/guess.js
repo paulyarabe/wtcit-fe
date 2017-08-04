@@ -1,6 +1,7 @@
 function createGuess(){
 
   let all = []
+  let allIds = []
 
   return class Guess {
     constructor(id, game, user, text, correct){
@@ -10,16 +11,23 @@ function createGuess(){
       this.text = text
       this.correct = correct
       all.push(this)
+      allIds.push(this.id)
     }
 
     static constructMany(json){
       json.forEach(guess => {
-        new Guess(guess.id, Game.find(guess.game_id), User.find(guess.user_id), guess.text, guess.correct)
+        if (!this.allIds.includes(guess.id)) {
+          new Guess(guess.id, Game.find(guess.game_id), User.find(guess.user_id), guess.text, guess.correct)
+        }
       })
     }
 
     static get all(){
       return all
+    }
+
+    static get allIds(){
+      return allIds
     }
 
     static find(id){

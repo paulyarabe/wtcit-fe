@@ -1,6 +1,7 @@
 function createComment(){
 
   let all = []
+  let allIds = []
 
   return class Comment {
     constructor(id, user, text, game={}){
@@ -9,16 +10,23 @@ function createComment(){
       this.text = text
       this.game_id = game.id
       all.push(this)
+      allIds.push(this.id)
     }
 
     static constructMany(json){
       json.forEach(comment => {
-        new Comment(comment.id, User.find(comment.user_id), comment.text, Game.find(comment.game_id))
+        if (!this.allIds.includes(comment.id)) {
+          new Comment(comment.id, User.find(comment.user_id), comment.text, Game.find(comment.game_id))
+        }
       })
     }
 
     static get all(){
       return all
+    }
+
+    static get allIds(){
+      return allIds
     }
 
     static find(id){

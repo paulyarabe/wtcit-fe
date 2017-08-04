@@ -1,22 +1,30 @@
 function createUser(){
 
   let all = []
+  let allIds = []
 
   return class User {
     constructor(id, name){
       this.id = id
       this.name = name
       all.push(this)
+      allIds.push(this.id)
     }
 
     static constructMany(json){
       json.forEach(user => {
-        new User(user.id, user.name)
+        if (!this.allIds.includes(user.id)) {
+          new User(user.id, user.name)
+        }
       })
     }
 
     static get all(){
       return all
+    }
+
+    static get allIds(){
+      return allIds
     }
 
     static find(id){
