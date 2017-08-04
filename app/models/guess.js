@@ -12,6 +12,12 @@ function createGuess(){
       all.push(this)
     }
 
+    static constructMany(json){
+      json.forEach(guess => {
+        new Guess(guess.id, Game.find(guess.game_id), User.find(guess.user_id), guess.text, guess.correct)
+      })
+    }
+
     static get all(){
       return all
     }

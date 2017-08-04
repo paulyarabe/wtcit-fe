@@ -11,6 +11,12 @@ function createComment(){
       all.push(this)
     }
 
+    static constructMany(json){
+      json.forEach(comment => {
+        new Comment(comment.id, User.find(comment.user_id), comment.text, Game.find(comment.game_id))
+      })
+    }
+
     static get all(){
       return all
     }
