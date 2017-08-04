@@ -4,7 +4,7 @@ class GameAdapter {
   }
 
   static current(){
-    return fetch("http://localhost:3000/games/current")
+    return fetch(`http://${ipAddress}:3000/games/current`)
     .then(resp => resp.json())
   }
 
