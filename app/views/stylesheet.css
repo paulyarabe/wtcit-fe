@@ -2,11 +2,15 @@ body {
     background-color: ;
 }
 
-#alert-banner {
+#win-banner {
   background-color: green;
 }
 
-.guesses-comments {
+#game-name {
+  text-align: center;
+}
+
+.guesses-comments-image {
   height: 400px;
   width: 300px;
   border:1px solid;
@@ -22,6 +26,10 @@ body {
   width: 300px;
   position: absolute;
   display: none;
+}
+
+#row4 {
+  padding-top: 10px;
 }
 
 #footer {

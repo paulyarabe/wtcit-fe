@@ -1,13 +1,13 @@
 class GameController extends ApplicationController {
 
   displayNewGameForm(){
-    DisplayController.render(Form.newGame, '#new-game-container')
+    DisplayController.render(Form.newGame, '#status-container')
     DisplayController.render(Form.userName, '#username-input')
   }
 
   displayGameName(){
     let game = Game.last
-    DisplayController.render(game.nameHTML, '#new-game-container')
+    DisplayController.render(game.nameHTML, '#status-container')
   }
 
   displayGuessForm(){
@@ -40,8 +40,7 @@ class GameController extends ApplicationController {
     if (guess.correct){
       imageController.stopCrop()
       $("#guess").hide()
-      DisplayController.render(guess.winnerHTML, "#alert-banner")
-      DisplayController.render(Form.newGame, '#new-game-container')
+      DisplayController.render(guess.winnerHTML + Form.newGame, "#status-container")
     }
   }
 

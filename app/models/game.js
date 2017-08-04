@@ -33,7 +33,7 @@ function createGame(){
     }
 
     get nameHTML(){
-      return `<h3>Game: ${this.name}</h3>`
+      return `<h3 id="game-name">Game Name: ${this.name}</h3>`
     }
 
   }

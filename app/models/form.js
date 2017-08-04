@@ -23,8 +23,6 @@ class Form {
   }
   static get guess(){
     return `<form id="guess" action="#" method="post">
-      <label>Username:</label>
-      <input id="user-name" type="text" name="guess[username]" value=""><br>
       <label>Guess:</label>
       <input type="text" name="guess[text]" data-gameid="${Game.last.id}" value="" required>
       <input type="submit" value="Submit">
