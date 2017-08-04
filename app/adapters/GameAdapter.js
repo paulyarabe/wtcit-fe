@@ -11,7 +11,7 @@ class GameAdapter {
   static create(gameName, category){
     let header = new Headers
     header.set('Content-Type', 'application/json')
-    return fetch("http://localhost:3000/games", {
+    return fetch(`http://${ipAddress}:3000/games`, {
       method:"POST",
       headers: header,
       body: JSON.stringify({gameName, category})

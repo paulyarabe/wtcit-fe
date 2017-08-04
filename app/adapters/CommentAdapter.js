@@ -6,7 +6,7 @@ class CommentAdapter {
   static create(userName, commentText, game){
     let header = new Headers
     header.set('Content-Type', 'application/json')
-    return fetch("http://localhost:3000/comments", {
+    return fetch(`http://${ipAddress}:3000/comments`, {
       method:"POST",
       headers: header,
       body: JSON.stringify({userName, commentText, game})
