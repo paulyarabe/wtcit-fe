@@ -1,6 +1,6 @@
 class GuessController extends ApplicationController {
 
-    createGuess(){
+    static createGuess(){
       $('body').on('submit', '#guess', function(event){
         event.preventDefault()
         let game = Game.last
@@ -8,11 +8,11 @@ class GuessController extends ApplicationController {
         let guessText = event.currentTarget[0].value
         event.currentTarget[0].value = ""
         GuessAdapter.create(userName, guessText, game)
-        .then(guess => gameController.updateStatus(guess))
+        .then(guess => GameController.updateStatus(guess))
       })
     }
 
-    init(){
+    static init(){
       this.createGuess()
     }
 }

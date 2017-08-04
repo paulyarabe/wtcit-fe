@@ -11,6 +11,12 @@ function createGame(){
       all.push(this)
     }
 
+    static constructMany(json){
+      json.forEach(game => {
+        new Game(game.id, game.image_id, game.name)
+      })
+    }
+
     static get all(){
       return all
     }

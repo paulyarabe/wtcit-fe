@@ -9,6 +9,12 @@ function createUser(){
       all.push(this)
     }
 
+    static constructMany(json){
+      json.forEach(user => {
+        new User(user.id, user.name)
+      })
+    }
+
     static get all(){
       return all
     }

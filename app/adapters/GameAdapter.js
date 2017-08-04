@@ -5,7 +5,7 @@ class GameAdapter {
 
   static current(){
     return fetch("http://localhost:3000/games/current")
-    .then()
+    .then(resp => resp.json())
   }
 
   static create(gameName, category){

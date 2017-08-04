@@ -1,9 +1,9 @@
 class ImageController extends ApplicationController {
 
-  displayImage(){
+  static displayImage(){
     let image = Image.last
     DisplayController.render(image.html, '#image-box')
-    imageController.startCrop(2)
+    ImageController.startCrop(2)
   }
 
   static get imageSections(){
@@ -31,7 +31,7 @@ class ImageController extends ApplicationController {
     ]
   }
 
-  startCrop(interval){
+  static startCrop(interval){
     let sections = ImageController.imageSections
     $("#game-image").css("display", "block")
     $("#game-image").css("clip", `${sections[Math.floor(Math.random()*sections.length)]}`)
@@ -40,11 +40,11 @@ class ImageController extends ApplicationController {
     }, interval*1000)
   }
 
-  stopCrop(){
+  static stopCrop(){
     clearInterval(window.cropInterval)
     $("#game-image").css("clip", "auto")
   }
 
-  init(){
+  static init(){
   }
 }

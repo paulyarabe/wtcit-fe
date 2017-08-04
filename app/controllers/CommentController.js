@@ -1,10 +1,10 @@
 class CommentController extends ApplicationController {
 
-    displayCommentForm(){
+    static displayCommentForm(){
       DisplayController.render(Form.comment, '#comment-form')
     }
 
-    createComment(){
+    static createComment(){
       $('body').on('submit', '#comment', function(event){
         event.preventDefault()
         let userName = $('#user-name').val()
@@ -16,7 +16,7 @@ class CommentController extends ApplicationController {
       })
     }
 
-    init(){
+    static init(){
       this.displayCommentForm()
       this.createComment()
     }
