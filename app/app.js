@@ -1,7 +1,8 @@
 $(document).ready(function(){
   // Actions that happen on page load for all users joining page
   PageController.displayGameRoom()
-  CategoryAdapter.index()
+  SessionController.syncGame()
+  CategoryAdapter.index() // TODO: remove this - this will be handled by GameAdapter.current()
   .then(function(){
     // create controllers
     gameController = new GameController();
