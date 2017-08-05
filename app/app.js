@@ -6,7 +6,7 @@ $(document).ready(function(){
   PageController.displayGameRoom() //TODO: decide when to do this when there are multiple game rooms.
   CommentController.displayCommentForm() //TODO: wrap or find place to put this and line below.
   DisplayController.render(Form.userName, "#username-input")
-  setInterval(SessionController.syncGame, 100)
+  setInterval(SessionController.syncGame, 250)
   //CategoryAdapter.index() // TODO: remove this - this will be handled by GameAdapter.current()
   //.then(function(){
     // create controllers

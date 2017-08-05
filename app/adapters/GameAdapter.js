@@ -17,10 +17,10 @@ class GameAdapter {
       body: JSON.stringify({gameName, category})
     })
     .then(resp => resp.json())
-    .then(json => {
-      new Game(json.game.id, json.image, json.game.name, json.game.complete);
-      new Image(json.image.id, json.image.url, json.image.answer, Category.find(json.image.category_id))
-      })
+    // .then(json => {
+    //   new Game(json.game.id, json.image, json.game.name, json.game.complete);
+    //   new Image(json.image.id, json.image.url, json.image.answer, Category.find(json.image.category_id))
+    //   })
   }
 
 }
