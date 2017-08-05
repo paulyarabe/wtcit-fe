@@ -15,12 +15,13 @@ class Form {
       </form><br>`
   }
 
-  static get userName(){
-    return `
-      <label>Username:</label>
-      <input id="user-name" type="text" name="guess[username]" value=""><br>
-      `
-  }
+  // static get userName(){
+  //   return `
+  //     <label>Username:</label>
+  //     <input id="user-name" type="text" name="guess[username]" value=""><br>
+  //     `
+  // }
+
   static get guess(){
     return `<form id="guess" action="#" method="post">
       <label>Guess:</label>
@@ -29,11 +30,11 @@ class Form {
     </form>`
   }
 
-  static get comment(){
-    return `<form id="comment" action="#" method="post">
-      <label>Comment:</label>
-      <input type="text" name="comment" value="" required>
-      <input type="submit" value="Chat">
-    </form>`
-  }
+  // static get comment(){
+  //   return `<form id="comment" action="#" method="post">
+  //     <label>Comment:</label>
+  //     <input type="text" name="comment" value="" required>
+  //     <input type="submit" value="Chat">
+  //   </form>`
+  // }
 }

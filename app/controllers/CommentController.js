@@ -1,8 +1,8 @@
 class CommentController extends ApplicationController {
 
-    static displayCommentForm(){
-      DisplayController.render(Form.comment, '#comment-form')
-    }
+    // static displayCommentForm(){
+    //   DisplayController.render(Form.comment, '#comment-form')
+    // }
 
     static createComment(){
       $('body').on('submit', '#comment', function(event){
@@ -17,7 +17,7 @@ class CommentController extends ApplicationController {
     }
 
     static init(){
-      this.displayCommentForm()
+      // this.displayCommentForm()
       this.createComment()
     }
 }
