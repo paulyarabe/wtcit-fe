@@ -79,6 +79,21 @@ class PageController extends ApplicationController {
     DisplayController.render(html, "#page-area")
   }
 
+  static displaySeeder(){
+
+    let html =
+      `<div id = "seed-page-container" class="row page-title">
+        <h1 align="center">Seed Room</h1>
+        <div align="center" id="api-image"></div>
+        <div align="center" id="load-button">
+          <input id="seed-category" type="text" name="category" value="" placeholder="category">
+          <input id="load-image" type="submit" name="submit" value="load image">
+        </div>
+      </div>`
+
+    DisplayController.render(html, "#page-area")
+  }
+
   init(){
   }
 }
