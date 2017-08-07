@@ -15,8 +15,6 @@ class PageController extends ApplicationController {
     <!-- Row2 -->
     <div class="row">
 
-      <!-- <div id="alert-banner" class="game-div-js"></div>
-      <div id="new-game-container" class="game-div-js"></div> -->
       <div id="status-container" class="game-div-js"></div>
 
     </div>
@@ -60,11 +58,20 @@ class PageController extends ApplicationController {
       </div>
 
       <div class="col-md-4">
-        <div id="username-input"></div>
+        <div id="username-input">
+          <label>Username:</label>
+          <input id="user-name" type="text" name="guess[username]" value=""><br>
+        </div>
       </div>
 
       <div class="col-md-4">
-        <div id="comment-form"></div>
+        <div id="comment-form">
+          <form id="comment" action="#" method="post">
+            <label>Comment:</label>
+            <input type="text" name="comment" value="" required>
+            <input type="submit" value="Chat">
+          </form>
+        </div>
       </div>
 
     </div>

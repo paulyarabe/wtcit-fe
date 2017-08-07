@@ -38,6 +38,10 @@ function createGame(){
       return Image.all.filter(image => image.id === this.image_id)[0]
     }
 
+    get winningGuess(){
+      return Guess.all.filter(guess => (guess.game_id === this.id && guess.correct))[0]
+    }
+
     get nameHTML(){
       return `<h3 id="game-name">Game Name: ${this.name}</h3>`
     }

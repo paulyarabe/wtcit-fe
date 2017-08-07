@@ -1,9 +1,13 @@
 class ImageController extends ApplicationController {
 
-  static displayImage(){
+  static displayImage(crop=false){
     let image = Image.last
     DisplayController.render(image.html, '#image-box')
-    ImageController.startCrop(2)
+    if (crop){
+      ImageController.startCrop(2)
+    } else {
+      $("#game-image").css("display", "block")
+    }
   }
 
   static get imageSections(){

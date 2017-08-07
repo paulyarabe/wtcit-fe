@@ -1,18 +1,18 @@
 class GameController extends ApplicationController {
 
-  static displayNewGameForm(){
-    DisplayController.render(Form.newGame, '#status-container')
-    DisplayController.render(Form.userName, '#username-input')
-  }
+  // static displayNewGameForm(){
+  //   DisplayController.render(Form.newGame, '#status-container')
+  //   DisplayController.render(Form.userName, '#username-input')
+  // }
 
-  static displayGameName(){
-    let game = Game.last
-    DisplayController.render(game.nameHTML, '#status-container')
-  }
+  // static displayGameName(){
+  //   let game = Game.last
+  //   DisplayController.render(game.nameHTML, '#status-container')
+  // }
 
-  static displayGuessForm(){
-    DisplayController.render(Form.guess, '#guess-form')
-  }
+  // static displayGuessForm(){
+  //   DisplayController.render(Form.guess, '#guess-form')
+  // }
 
   static createNewGame(){
     $("body").on('submit', '#start-game', function(event){
@@ -35,17 +35,17 @@ class GameController extends ApplicationController {
     })
   }
 
-  static updateStatus(guess){
-    DisplayController.render(Guess.allHTML(guess.game), "#guess-list")
-    if (guess.correct){
-      ImageController.stopCrop()
-      $("#guess").hide()
-      DisplayController.render(guess.winnerHTML + Form.newGame, "#status-container")
-    }
-  }
+  // static updateStatus(guess){
+  //   DisplayController.render(Guess.allHTML(guess.game), "#guess-list")
+  //   if (guess.correct){
+  //     ImageController.stopCrop()
+  //     $("#guess").hide()
+  //     DisplayController.render(guess.winnerHTML + Form.newGame, "#status-container")
+  //   }
+  // }
 
   static init(){
-    this.displayNewGameForm() //TODO pull this out into a "session" controller; needs to load all users!
+    // this.displayNewGameForm() //TODO pull this out into a "session" controller; needs to load all users!
     this.createNewGame()
     this.resetPage()
   }

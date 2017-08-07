@@ -12,7 +12,7 @@ class GuessAdapter {
       body: JSON.stringify({userName, guessText, game})
     }).then(resp => resp.json())
       .then(json => {
-        Game.last.complete = json.game.complete;
+        // Game.last.complete = json.game.complete;
         User.find_or_create(json.user);
         return new Guess(json.guess.id, json.game, json.user, json.guess.text, json.guess.correct)
       })

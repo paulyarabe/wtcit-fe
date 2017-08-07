@@ -8,7 +8,7 @@ class GuessController extends ApplicationController {
         let guessText = event.currentTarget[0].value
         event.currentTarget[0].value = ""
         GuessAdapter.create(userName, guessText, game)
-        .then(guess => GameController.updateStatus(guess))
+        // .then(guess => GameController.updateStatus(guess))
       })
     }
 
