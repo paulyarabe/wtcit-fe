@@ -11,7 +11,7 @@ class Form {
       <select class="category" name="game[categories]">
       ${Category.allHTML}
       </select><br>
-      <input type="submit" value="Start Game">
+      <input class="btn btn-info" type="submit" value="Start Game">
       </form><br>`
   }
 
@@ -26,7 +26,7 @@ class Form {
     return `<form id="guess" action="#" method="post">
       <label>Guess:</label>
       <input type="text" name="guess[text]" data-gameid="${Game.last.id}" value="" required>
-      <input type="submit" value="Submit">
+      <input class="btn btn-info" type="submit" value="Submit">
     </form>`
   }
 

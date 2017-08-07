@@ -1,20 +1,40 @@
 body {
     background-color: ;
+    background-image: url('../light-grey-background.jpg');
+}
+
+.rounded {
+  border-radius: 15px;
 }
 
 #win-banner {
-  background-color: green;
+  background-color: #3CB371;
+  color: white;
+  text-align: center;
+  width: 500px;
+  height: 0 auto;
+  padding: 25px;
+  margin: 0 auto;
 }
 
 #game-name {
   text-align: center;
 }
 
-.guesses-comments-image {
+.guesses-comments {
+  background-color: #F5F5DC;
+  height: 400px;
+  width: 300px;
+  border:2px solid;
+  overflow:auto;
+  border-color: grey;
+}
+
+.image {
+  background-color: white;
   height: 400px;
   width: 300px;
   border:1px solid;
-  overflow:auto;
 }
 
 .image-js {

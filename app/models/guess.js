@@ -60,7 +60,7 @@ function createGuess(){
     }
 
     get winnerHTML(){
-      return `<div id="win-banner"><h3>${this.user.name} wins ${Game.last.name}!!!</h3><p>The answer was: ${this.text}</p></div>`
+      return `<div id="win-banner" class='rounded'><h3>${this.user.name} wins ${Game.last.name}!!!</h3><p>The answer was: ${this.text}</p></div>`
     }
 
     static allHTML(game){

@@ -49,7 +49,7 @@ class PageController extends ApplicationController {
       <div class="col-md-4">
         <div id="guess-container">
           <h3>Guesses:</h3>
-            <div id="guess-list"  class="guesses-comments-image"></div>
+            <div id="guess-list"  class="guesses-comments rounded"></div>
         </div>
       </div>
 
@@ -57,15 +57,15 @@ class PageController extends ApplicationController {
       <div class="col-md-4">
         <div id="image-container" class="image-js">
           <h3>What the crop is this:</h3>
-          <div id = "image-box" class="guesses-comments-image"></div>
+          <div id = "image-box" class="image"></div>
         </div>
       </div>
 
       <!-- Comments -->
-      <div class="col-md-4">
+      <div class="col-md-4>
         <div id="comment-container">
           <h3>Chat:</h3>
-          <div id="comment-list" class="guesses-comments-image"></div>
+          <div id="comment-list" class="guesses-comments rounded"></div>
         </div>
         <button type="button" id = "scroll-lock-status" class="btn btn-info" onClick="PageController.toggleScrollLock()">Scroll Lock: ${window.scrollLock}</button>
       </div>
@@ -92,7 +92,7 @@ class PageController extends ApplicationController {
           <form id="comment" action="#" method="post">
             <label>Chat:</label>
             <input type="text" name="comment" value="" required>
-            <input type="submit" value="Submit">
+            <input class="btn btn-info" type="submit" value="Submit">
           </form>
         </div>
       </div>
@@ -118,7 +118,7 @@ class PageController extends ApplicationController {
         <div align="center" id="api-image"></div>
         <div align="center" id="load-button">
           <input id="seed-category" type="text" name="category" value="" placeholder="category">
-          <input id="load-image" type="submit" name="submit" value="load image">
+          <input id="load-image" class="btn btn-info" type="submit" name="submit" value="load image">
         </div>
         <p id="footer"></p>
       </div>`
