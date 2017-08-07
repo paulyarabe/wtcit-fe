@@ -4,7 +4,7 @@ class SeedAdapter{
       fetch(`https://pixabay.com/api/?key=6057872-ace21032695f6ad08f9b7a136&q=${category}&per_page=100&page=${randomPage}`).
       then(res => res.json()).
       then(json => {
-        $('#api-image').prepend(`<div><img id="current-image"src='${json.hits[randomNum].webformatURL}'/><br>Image Tags: ${json.hits[randomNum].tags}<br><br><form action="index.html" method="post"><input type="text" id="image-answer" name="answer" value="" placeholder="answer"><input type="submit" id='create-db-image' name="submit" value="seed image"></form><br></div>`)
+        $('#api-image').prepend(`<div><img id="current-image"src='${json.hits[randomNum].webformatURL}'/><br>Image Tags: ${json.hits[randomNum].tags}<br><br><form action="index.html" method="post"><input type="text" id="image-answer" name="answer" value="" placeholder="answer"><input class="btn btn-info" type="submit" id='create-db-image' name="submit" value="seed image"></form><br></div>`)
       })
     }
 
