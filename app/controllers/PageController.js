@@ -62,7 +62,7 @@ class PageController extends ApplicationController {
       </div>
 
       <!-- Comments -->
-      <div class="col-md-4>
+      <div class="col-md-4">
         <div id="comment-container">
           <h3>Chat:</h3>
           <div id="comment-list" class="guesses-comments rounded"></div>
