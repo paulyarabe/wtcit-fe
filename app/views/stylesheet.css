@@ -28,6 +28,11 @@ body {
   display: none;
 }
 
+#current-image {
+  height: 400px;
+  width: 300px;
+}
+
 #row4 {
   padding-top: 10px;
 }
