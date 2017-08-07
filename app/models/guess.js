@@ -48,7 +48,7 @@ function createGuess(){
     }
 
     get html(){
-      return `<p>${this.user.name}: ${this.text}</p>`
+      return `<p><strong>${this.user.name}:</strong> ${this.text}</p>`
       // return '<li>' + this.text + '</li>'
     }
 
