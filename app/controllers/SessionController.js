@@ -42,6 +42,7 @@ class SessionController extends ApplicationController {
   static syncGame(){
     GameAdapter.current()
     .then(json => {
+      PageController.scrollLock()
         if (SessionController.pageLoad){
           // Page was just loaded or refreshed
           Category.constructMany(json.category);
